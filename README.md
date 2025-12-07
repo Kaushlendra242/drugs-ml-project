@@ -1,121 +1,114 @@
-🔬 Drugs, Side Effects & Medical Condition – Machine Learning Project
-End-to-End Data Science Pipeline
+# 🔬 **Drugs, Side Effects & Medical Condition – Machine Learning Project**
 
-EDA → Feature Engineering → Regression → Classification → Deployment
+## **End-to-End Data Science Pipeline**
+**EDA → Feature Engineering → Regression → Classification → Deployment**
 
 This repository contains a production-ready machine learning project built on a real-world pharmaceutical dataset covering:
 
-Drug names & generic names
-
-Medical conditions
-
-Side effects
-
-Pregnancy category
-
-CSA schedule
-
-Rx/OTC regulatory classification
-
-Alcohol interaction
-
-User reviews & drug ratings
+- **Drug names & generic names**
+- **Medical conditions**
+- **Side effects**
+- **Pregnancy category**
+- **CSA schedule**
+- **Rx/OTC regulatory classification**
+- **Alcohol interaction**
+- **User reviews & drug ratings**
 
 The project solves two predictive ML tasks:
 
-✅ 1. Predict Drug Rating (Regression)
-✅ 2. Predict Rx / OTC Type (Classification)
+### ✅ **1. Predict Drug Rating (Regression)**  
+### ✅ **2. Predict Rx / OTC Type (Classification)**  
 
-It includes:
+---
 
-✔ Complete Jupyter Notebook
-✔ Thorough EDA
-✔ Feature Engineering
-✔ Regression & Classification Models
-✔ Hyperparameter Tuning
-✔ Final Evaluation Metrics
-✔ Streamlit App for Deployment
-✔ Saved Encoders for Dropdown Mapping
-✔ Word/PDF Reports
+# 📌 **Project Includes**
+- ✔ **Complete Jupyter Notebook**
+- ✔ **Thorough EDA**
+- ✔ **Feature Engineering**
+- ✔ **Regression & Classification Models**
+- ✔ **Hyperparameter Tuning**
+- ✔ **Final Evaluation Metrics**
+- ✔ **Streamlit App**
+- ✔ **Saved Label Encoders**
+- ✔ **PDF / DOCX Reports**
 
-📁 Project Folder Structure
+---
+
+# 📁 **Project Folder Structure**
+
 drugs-ml-project/
-│
-├── drugs_side_effects_medical_condition_drugs_ml_predict.ipynb   # EDA → ML → Tuning 
-├── app.py                                                        # Streamlit app 
-├── drug_rating_regressor.pkl                                     # Tuned RandomForestRegressor
-├── rx_otc_classifier.pkl                                         # Tuned RandomForestClassifier
-├── encoders.pkl                                                  # LabelEncoders for dropdowns
-├── requirements.txt                                              # Dependencies
+├── drugs_side_effects_medical_condition_drugs_ml_predict.ipynb # Full workflow: EDA → ML → Tuning
+├── app.py # Streamlit app
+├── drug_rating_regressor.pkl # Tuned RandomForestRegressor
+├── rx_otc_classifier.pkl # Tuned RandomForestClassifier
+├── encoders.pkl # LabelEncoders for dropdowns
+├── requirements.txt # Dependencies
 │
 ├── data/
-│   └── drugs_side_effects_drugs_com.csv
+│ └── drugs_side_effects_drugs_com.csv
 │
 ├── reports/
-│   ├── Drugs_Project_Summary_Basic.pdf
-│   ├── Drugs_Project_Summary_Basic.docx
-│   ├── Drugs_Project_Summary_Advanced.pdf
-│   └── Drugs_Project_Summary_Advanced.docx
+│ └── Drugs_Project_Summary_Basic.pdf
 │
 └── README.md
 
-🧼 Data Cleaning & Preprocessing
-✔ Key Steps
 
-Extracted & cleaned features from:
-generic_name, medical_condition, side_effects, drug_classes,
-rx_otc, pregnancy_category, csa, alcohol
+---
 
-Converted activity → 0/1
+# 🧼 **Data Cleaning & Preprocessing**
 
-Converted alcohol: "X" → 1, NaN → 0
+### ✔ **Key Steps**
+- Extracted and cleaned:
+  - **generic_name**, **medical_condition**, **side_effects**, **drug_classes**
+  - **rx_otc**, **pregnancy_category**, **csa**, **alcohol**
+- Converted **activity → 0/1**
+- Converted **alcohol: "X" → 1, NaN → 0**
+- Missing text fields → **"Unknown"**
+- Missing numeric fields → **0**
+- Label Encoded:
+  - **generic_name**, **medical_condition**, **side_effects**
+  - **pregnancy_category**, **csa**, **rx_otc**
 
-Missing text fields → "Unknown"
+### ✔ **Final Dataset**
+- **Rows:** 2,931  
+- **Columns:** 16  
+- **No missing values remain**
 
-Missing numeric fields (rating, no_of_reviews) → 0
+---
 
-Fully Label Encoded:
+# 📊 **Exploratory Data Analysis (EDA)**
 
-generic_name, medical_condition, side_effects,
-
-pregnancy_category, csa, rx_otc
-
-✔ Final Dataset
-
-Rows: 2,931
-
-Columns after cleaning: 16
-
-No missing values remain
-
-📊 Exploratory Data Analysis (EDA)
-🔹 Frequent Medical Conditions
-
+### 🔹 **Frequent Medical Conditions**
 Pain, Colds & Flu, Acne, Hypertension, Infection, etc.
 
-🔹 Common Side Effects
-
+### 🔹 **Common Side Effects**
 Hives, difficulty breathing, swelling, rash, dizziness, nausea.
 
-🔹 Most Common Drug Classes
-
+### 🔹 **Most Common Drug Classes**
 Upper respiratory combinations, topical steroids, acne agents, antibiotics.
 
-Visualizations available inside the notebook.
+Visualizations available in the notebook.
 
-🤖 Machine Learning – Regression (Predict Drug Rating)
-Baseline Model Comparison
-Model	RMSE	R²
-LinearRegression	3.585	0.109
-RandomForestRegressor	1.425	0.859
-GradientBoostingRegressor	1.612	0.820
-CatBoostRegressor	1.568	0.830
+---
 
-🏆 Best Baseline Model → RandomForestRegressor
+# 🤖 **Machine Learning – Regression (Predict Drug Rating)**
 
-Hyperparameter Tuning (Random Forest)
+## **Baseline Model Comparison**
 
-Best Parameters:
+| Model                       | RMSE  | R²    |
+|-----------------------------|-------|-------|
+| LinearRegression            | 3.585 | 0.109 |
+| **RandomForestRegressor**   | **1.425** | **0.859** |
+| GradientBoostingRegressor   | 1.612 | 0.820 |
+| CatBoostRegressor           | 1.568 | 0.830 |
+
+### 🏆 **Best Baseline Model → RandomForestRegressor**
+
+---
+
+## **Hyperparameter Tuning (Random Forest)**
+
+**Best Parameters:**
 
 max_depth = 20
 min_samples_leaf = 2
@@ -123,156 +116,150 @@ min_samples_split = 2
 n_estimators = 200
 
 
-Best CV RMSE: 1.6322
+**Best CV RMSE:** `1.6322`
 
-🎯 Final Regression Performance (Test Set)
-Metric	Score
-RMSE	1.4618
-MAE	0.7877
-R² Score	0.8520
-✔ Model Insights
+---
 
-Explains 85.2% of rating variance
+## 🎯 **Final Regression Performance (Test Set)**
 
-Performs strongly on a 0–10 scale
+| Metric      | Score   |
+|-------------|---------|
+| **RMSE**    | **1.4618** |
+| **MAE**     | **0.7877** |
+| **R² Score** | **0.8520** |
 
-Robust for non-linear medical data
+### ✔ **Model Insights**
+- Explains **85.2%** of rating variance  
+- Performs strongly on a **0–10** scale  
+- Robust for non-linear medical data  
 
-🤖 Machine Learning – Classification (Predict Rx/OTC Type)
-Baseline Model Comparison
-Model	Accuracy	F1-Weighted
-Logistic Regression	0.686	0.616
-RandomForestClassifier	0.901	0.899
-Gradient Boosting	0.882	0.878
-CatBoostClassifier	0.879	0.876
+---
 
-🏆 Best Baseline Model → RandomForestClassifier
+# 🤖 **Machine Learning – Classification (Predict Rx/OTC Type)**
 
-Hyperparameter Tuning (Random Forest)
+## **Baseline Model Comparison**
 
-Best Parameters:
+| Model                   | Accuracy | F1-Weighted |
+|-------------------------|----------|-------------|
+| Logistic Regression     | 0.686    | 0.616       |
+| **RandomForestClassifier** | **0.901** | **0.899** |
+| Gradient Boosting       | 0.882    | 0.878       |
+| CatBoostClassifier      | 0.879    | 0.876       |
 
+### 🏆 **Best Baseline Model → RandomForestClassifier**
+
+---
+
+## **Hyperparameter Tuning (Random Forest)**
+
+**Best Parameters:**
 max_depth = 20
 min_samples_leaf = 1
 min_samples_split = 2
 n_estimators = 300
 
 
-Best CV Accuracy: 0.8827
+**Best CV Accuracy:** `0.8827`
 
-🎯 Final Classification Performance
-Metric	Score
-Accuracy	0.901
-Weighted F1-score	0.899
-Classification Report
+---
+
+## 🎯 **Final Classification Performance**
+
+| Metric          | Score |
+|------------------|--------|
+| **Accuracy**     | **0.901** |
+| **F1-weighted**  | **0.899** |
+
+### **Classification Report**
 Class 0 → F1 = 0.76
 Class 1 → F1 = 0.95
 Class 2 → F1 = 0.81
 Overall Accuracy = 0.90
 
-✔ Key Insights
 
-~90% accuracy
+---
 
-Excellent majority class performance
+# 🌐 **Streamlit Deployment**
 
-Balanced classification distribution
+The Streamlit app (`app.py`) provides:
 
-🌐 Streamlit Deployment
+### ✔ **Prediction Modes**
+- Drug Rating Prediction  
+- Rx/OTC Prediction  
 
-The Streamlit app (app.py) provides:
+### ✔ Features
+- Dropdowns powered by **LabelEncoders**
+- Automatic encoding before prediction
+- Clean UI
 
-✔ Two Prediction Modes
+---
 
-Drug Rating Prediction (Regression)
-
-Rx/OTC Prediction (Classification)
-
-✔ Features
-
-Dropdowns using LabelEncoders
-
-Automatic encoding for predictions
-
-Clean and simple UI
-
-▶️ Run the Streamlit App
+# ▶️ **Run the Streamlit App**
 
 Install dependencies:
 
 pip install -r requirements.txt
 
 
-Run the application:
-
+Run app:
 streamlit run app.py
 
-🚀 Deploy Online (Streamlit Cloud)
 
-Visit: https://streamlit.io/cloud
+---
 
-Connect GitHub
+# 🚀 **Deploy on Streamlit Cloud**
 
-Click New App
+1. Visit https://streamlit.io/cloud  
+2. Connect GitHub  
+3. Click **New App**  
+4. Choose:
+   - Repo: `drugs-ml-project`
+   - Branch: `main`
+   - File: `app.py`
+5. Click **Deploy**
 
-Choose:
+---
 
-Repo: drugs-ml-project
+# 📦 **Installation (Local Machine)**
 
-Branch: main
+git clone https://github.com/<Kaushlendra242>/drugs-ml-project.git
 
-File: app.py
-
-Click Deploy
-
-Your web app will be live.
-
-📦 Installation (Local Machine)
-
-Clone the repository:
-
-git clone https://github.com/<your-username>/drugs-ml-project.git
 cd drugs-ml-project
 
-
-Install dependencies:
-
 pip install -r requirements.txt
-
-
-Run notebook:
 
 jupyter notebook drugs_side_effects_medical_condition_drugs_ml_predict.ipynb
 
-🧾 Reports Included
 
-Located in /reports:
+---
 
-Basic Project Summary (PDF & DOCX)
+# 🧾 **Reports Included**
 
-Advanced ML Report (PDF & DOCX)
+Located in `/reports`:
+
+- **Basic Project Summary (PDF/DOCX)**
+
 
 Includes:
+- Full results  
+- Tables & scores  
+- Diagrams  
+- Conclusions  
 
-✔ Full results
-✔ Tables & scores
-✔ Diagrams
-✔ Conclusions
+---
 
-🧠 Key Insights
+# 🧠 **Key Insights**
 
-Random Forest is the best-performing algorithm for both ML tasks
+- **Random Forest** is the best-performing algorithm for both tasks  
+- Regression model predicts ratings with **R² = 0.852**  
+- Classification model predicts Rx/OTC type with **~90% accuracy**  
+- Encoded features significantly boost performance  
+- Dataset offers deep insights into healthcare and drug analytics  
 
-Regression model predicts ratings with R² = 0.852
+---
 
-Classification model predicts Rx/OTC type with ~90% accuracy
+# 👤 **Author**
 
-Encoded features significantly boost performance
-
-Dataset provides rich medical insights useful for healthcare analytics
-
-👤 Author
-
-Kaushlendra Pratap Singh
-Data Analyst | Machine Learning | Data Science Practitioner
+**Kaushlendra Pratap Singh**  
+Data Analyst | Machine Learning | Data Science Practitioner  
 GitHub: https://github.com/Kaushlendra242
