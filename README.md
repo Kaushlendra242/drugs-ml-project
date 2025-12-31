@@ -1,5 +1,7 @@
 # 🔬 **Drugs, Side Effects & Medical Condition – Machine Learning Project**
 
+### **🚀 Live Demo:** [https://drugs-ml-project-kaushlendra-ds.streamlit.app/]
+
 ## **End-to-End Data Science Pipeline**
 **EDA → Feature Engineering → Regression → Classification → Deployment**
 
